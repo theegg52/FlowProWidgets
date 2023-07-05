@@ -21,6 +21,8 @@
     {
       "type": "Douglas DC3",
       "vars": [
+        "ENGINE_Throttle_1",
+        "ENGINE_Throttle_2",
         "FUEL_Mixture_1",
         "FUEL_Mixture_2",
         "FUEL_Pump_1",
