@@ -1,7 +1,7 @@
 {
   "aircrafts": [
     {
-      "type": ""TT:ATCCOM.AC_MODEL C152.0.text"",
+      "type": "TT:ATCCOM.AC_MODEL C152.0.text",
       "vars": [
         "DEICE_Engine_1",
         "DEICE_Pitot_1",
