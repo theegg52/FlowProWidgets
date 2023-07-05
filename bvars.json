@@ -1,17 +1,22 @@
 {
-  "vars": [
-    "DEICE_Engine_1",
-    "DEICE_Pitot_1",
-    "ELECTRICAL_Alternator_1",
-    "ELECTRICAL_Battery_1",
-    "ENGINE_Magneto_1",
-    "ENGINE_Throttle_1",
-    "ENGINE_Primer_1_Lever",
-    "FUEL_Mixture_1",
-    "FUEL_Cutoff_1",
-    "LIGHTING_LANDING_1",
-    "LIGHTING_TAXI_1",
-    "LIGHTING_NAV_1",
-    "LIGHTING_STROBE_1"
+  "aircrafts": [
+    {
+      "type": "152",
+      "vars": [
+        "DEICE_Engine_1",
+        "DEICE_Pitot_1",
+        "ELECTRICAL_Alternator_1",
+        "ELECTRICAL_Battery_1",
+        "ENGINE_Magneto_1",
+        "ENGINE_Throttle_1",
+        "ENGINE_Primer_1_Lever",
+        "FUEL_Mixture_1",
+        "FUEL_Cutoff_1",
+        "LIGHTING_LANDING_1",
+        "LIGHTING_TAXI_1",
+        "LIGHTING_NAV_1",
+        "LIGHTING_STROBE_1"
+      ]
+    }
   ]
 }
