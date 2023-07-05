@@ -1,0 +1,9 @@
+{
+  "vars": [
+    "FUEL_Cutoff_1",
+    "LIGHTING_LANDING_1",
+    "LIGHTING_TAXI_1",
+    "LIGHTING_NAV_1",
+    "LIGHTING_STROBE_1"
+  ]
+}
