@@ -18,5 +18,12 @@
         "LIGHTING_STROBE_1"
       ]
     }
+    {
+      "type": "Douglas DC3",
+      "vars": [
+        "FUEL_Mixture_1",
+        "FUEL_Mixture_2"
+      ]
+    }
   ]
 }
