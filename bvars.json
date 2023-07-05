@@ -22,7 +22,9 @@
       "type": "Douglas DC3",
       "vars": [
         "FUEL_Mixture_1",
-        "FUEL_Mixture_2"
+        "FUEL_Mixture_2",
+        "FUEL_Pump_1",
+        "FUEL_Pump_2"
       ]
     }
   ]
