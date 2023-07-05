@@ -1,5 +1,6 @@
 {
   "vars": [
+    "DEICE_Engine_1",
     "ENGINE_Magneto_1",
     "FUEL_Cutoff_1",
     "LIGHTING_LANDING_1",
