@@ -1,80 +1,65 @@
-name: Merge JSON Files
+name: Fetch and Merge JSON Files
 
 on:
-  schedule:
-    - cron: "0 0 * * *"  # Runs every day at midnight UTC
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  merge_json:
+  fetch_and_merge_json:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3  # Use the latest version of actions/checkout
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3  # Use the latest version of actions/setup-node
-        with:
-          node-version: '20'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Install Dependencies
-        run: |
-          npm install node-fetch@2  # Install node-fetch for fetching JSON from URLs
+    - name: Fetch JSON files
+      run: |
+        mkdir -p ./data
+        curl -o ./data/file1.json https://cdn.flybywiresim.com/installer/config/production.json
+        curl -o ./data/file2.json https://cdn.headwindsim.net/installer/config/production.json
+        # Add more curl commands as needed to fetch additional files
 
-      - name: Merge JSON files from web
-        run: |
-          # Write the merge script
-          cat > merge-json.js <<EOF
-          const fetch = require('node-fetch');
+    - name: Merge JSON files
+      run: |
+        node -e "
           const fs = require('fs');
+          const path = require('path');
 
-          const url1 = 'https://cdn.flybywiresim.com/installer/config/production.json';  // Replace with the actual URL for file 1
-          const url2 = 'https://cdn.headwindsim.net/installer/config/production.json';  // Replace with the actual URL for file 2
-          const outputFile = './OneInstaller.json';  // Local path where merged file will be saved
+          // Function to merge JSON files
+          const mergeJsonFiles = (inputDir, outputFile) => {
+            const files = fs.readdirSync(inputDir).filter(file => file.endsWith('.json'));
+            let mergedData = {};
 
-          // Deep merge function to merge two objects recursively
-          function deepMerge(target, source) {
-            for (const key in source) {
-              if (Array.isArray(source[key]) && Array.isArray(target[key])) {
-                // Concatenate arrays instead of replacing them
-                target[key] = target[key].concat(source[key]);
-              } else if (source[key] instanceof Object && key in target) {
-                Object.assign(source[key], deepMerge(target[key], source[key]));
-              }
-            }
-            Object.assign(target || {}, source);
-            return target;
-          }
+            files.forEach(file => {
+              const filePath = path.join(inputDir, file);
+              const jsonData = JSON.parse(fs.readFileSync(filePath));
+              mergedData = { ...mergedData, ...jsonData };
+            });
 
-          async function mergeJSON() {
-            try {
-              const res1 = await fetch(url1);
-              const res2 = await fetch(url2);
-              
-              const json1 = await res1.json();
-              const json2 = await res2.json();
+            fs.writeFileSync(outputFile, JSON.stringify(mergedData, null, 2));
+            console.log('JSON files merged successfully!');
+          };
 
-              // Use deep merge to combine the two JSON objects
-              const mergedJson = deepMerge(json1, json2);
+          // Define input directory and output file
+          const inputDir = './data'; // Directory with fetched JSON files
+          const outputFile = './output/merged.json'; // Desired output path
 
-              fs.writeFileSync(outputFile, JSON.stringify(mergedJson, null, 2));
-              console.log('JSON files merged successfully');
-            } catch (error) {
-              console.error('Error fetching or merging JSON files:', error);
-            }
-          }
+          mergeJsonFiles(inputDir, outputFile);
+        "
 
-          mergeJSON();
-          EOF
-
-          # Run the script to merge JSON files
-          node merge-json.js
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'actions@github.com'
-          git add ./OneInstaller.json
-          git commit -m "Merged JSON files from web"
-          git push
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "your_email@example.com"
+        git config --local user.name "Your Name"
+        git add output/merged.json
+        git commit -m "Fetch and merge JSON files"
+        git push
