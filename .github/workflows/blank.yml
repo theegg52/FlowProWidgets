@@ -31,7 +31,7 @@ jobs:
 
           const url1 = 'https://cdn.flybywiresim.com/installer/config/production.json';  // Replace with the actual URL for file 1
           const url2 = 'https://cdn.headwindsim.net/installer/config/production.json';  // Replace with the actual URL for file 2
-          const outputFile = 'OneInstaller.json';  // Local path where merged file will be saved
+          const outputFile = './OneInstaller.json';  // Local path where merged file will be saved
 
           // Deep merge function to merge two objects recursively
           function deepMerge(target, source) {
@@ -75,6 +75,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'actions@github.com'
-          git add OneInstaller.json
+          git add ./OneInstaller.json
           git commit -m "Merged JSON files from web"
           git push
