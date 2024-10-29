@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Use forked versions of the actions or internal versions since third-party actions aren't allowed
       - name: Checkout repository
-        uses: theegg52/checkout@main  # Use your forked version of actions/checkout
+        uses: actions/checkout@v3  # Use the latest version of actions/checkout
 
-      - name: Install Node.js
-        uses: theegg52/setup-node@main  # Use your forked version of actions/setup-node
+      - name: Set up Node.js
+        uses: actions/setup-node@v3  # Use the latest version of actions/setup-node
         with:
           node-version: '20'
 
