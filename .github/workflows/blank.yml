@@ -3,34 +3,50 @@ name: Merge JSON Files
 on:
   schedule:
     - cron: "0 0 * * *"  # Runs every day at midnight UTC
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   merge_json:
     runs-on: ubuntu-latest
 
     steps:
+      # Use forked versions of the actions or internal versions since third-party actions aren't allowed
       - name: Checkout repository
-        uses: actions/checkout@v3  # Update to v3 for Node.js 20 compatibility
+        uses: theegg52/checkout@main  # Use your forked version of actions/checkout
 
       - name: Install Node.js
-        uses: actions/setup-node@v3  # Update to v3 for Node.js 20 compatibility
+        uses: theegg52/setup-node@main  # Use your forked version of actions/setup-node
         with:
           node-version: '20'
 
+      - name: Install Dependencies
+        run: |
+          npm install node-fetch@2  # Install node-fetch for fetching JSON from URLs
+
       - name: Merge JSON files from web
         run: |
-          # Create a script to fetch and merge two JSON files from the web
-          npm install node-fetch@2  # Install node-fetch to make HTTP requests
-
-          # Write the script
+          # Write the merge script
           cat > merge-json.js <<EOF
           const fetch = require('node-fetch');
           const fs = require('fs');
-          
+
           const url1 = 'https://cdn.flybywiresim.com/installer/config/production.json';  // Replace with the actual URL for file 1
           const url2 = 'https://cdn.headwindsim.net/installer/config/production.json';  // Replace with the actual URL for file 2
           const outputFile = 'OneInstaller.json';  // Local path where merged file will be saved
+
+          // Deep merge function to merge two objects recursively
+          function deepMerge(target, source) {
+            for (const key in source) {
+              if (Array.isArray(source[key]) && Array.isArray(target[key])) {
+                // Concatenate arrays instead of replacing them
+                target[key] = target[key].concat(source[key]);
+              } else if (source[key] instanceof Object && key in target) {
+                Object.assign(source[key], deepMerge(target[key], source[key]));
+              }
+            }
+            Object.assign(target || {}, source);
+            return target;
+          }
 
           async function mergeJSON() {
             try {
@@ -40,7 +56,8 @@ jobs:
               const json1 = await res1.json();
               const json2 = await res2.json();
 
-              const mergedJson = { ...json1, ...json2 };
+              // Use deep merge to combine the two JSON objects
+              const mergedJson = deepMerge(json1, json2);
 
               fs.writeFileSync(outputFile, JSON.stringify(mergedJson, null, 2));
               console.log('JSON files merged successfully');
@@ -54,7 +71,7 @@ jobs:
 
           # Run the script to merge JSON files
           node merge-json.js
-          
+
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions'
