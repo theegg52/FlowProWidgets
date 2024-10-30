@@ -24,8 +24,8 @@ jobs:
     - name: Fetch JSON files
       run: |
         mkdir -p ./data
-        curl -o ./data/file1.json https://cdn.flybywiresim.com/installer/config/production.json
         curl -o ./data/file2.json https://cdn.headwindsim.net/installer/config/production.json
+        curl -o ./data/file1.json https://cdn.flybywiresim.com/installer/config/production.json
 
     - name: Ensure output directory exists
       run: |
