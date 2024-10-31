@@ -81,8 +81,8 @@
           "tracks": [
             {
               "name": "Stable",
-              "key": "a380x-master",
-              "url": "https://flybywirecdn.com/addons/a380x-master",
+              "key": "a380x-alpha",
+              "url": "https://flybywirecdn.com/addons/a380x-alpha",
               "alternativeUrls": [
                 "external/a32nx/stable",
                 "https://cdn.flybywiresim.com/addons/a32nx/stable"
