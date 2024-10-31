@@ -2,9 +2,9 @@
   "version": 1,
   "publishers": [
     {
-      "name": "Headwind Simulations",
-      "key": "headwindsim",
-      "logoUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Headwind.svg",
+      "name": "FlyByWire Simulations",
+      "key": "flybywiresim",
+      "logoUrl": "https://flybywirecdn.com/installer/media-assets/publisher-icons/flybywiresim/0.svg",
       "defs": [
         {
           "kind": "addonCategory",
@@ -13,28 +13,8 @@
         },
         {
           "kind": "addonCategory",
-          "key": "airbus",
-          "title": "Airbus"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "sukhoi",
-          "title": "Sukhoi"
-        },
-        {
-          "kind": "addonCategory",
           "key": "scenery",
           "title": "Scenery"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "livery",
-          "title": "Livery"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "other",
-          "title": "Other"
         },
         {
           "kind": "addonCategory",
@@ -69,258 +49,157 @@
       ],
       "addons": [
         {
-          "name": "A339X",
-          "key": "a339x",
-          "repoOwner": "headwindsim",
+          "key": "A32NX",
+          "name": "A32NX",
+          "repoOwner": "flybywiresim",
           "repoName": "aircraft",
-          "category": "@airbus",
-          "aircraftName": "A330-900neo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A339X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A339X-Light.svg",
+          "category": "@aircraft",
+          "aircraftName": "A320-251N",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-a32nx/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-a32nx/light.svg",
           "enabled": true,
           "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/A339X/installer_bg_3.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fbw-a32nx/1.png"
           ],
-          "shortDescription": "Airbus A330-900 Series",
-          "description": "The Airbus A330neo is a wide-body airliner developed by Airbus from the Airbus A330. The A330neo has 260 and 300 seats in a typical three-class layout, or up to 460 in economy class and has a range of 7,200 nautical miles. It is exclusively powered by the Rolls-Royce Trent 7000.",
+          "shortDescription": "Airbus A320neo Series",
+          "description": "The A320neo (new engine option) is one of many upgrades introduced by Airbus to help maintain its A320 product line’s position as the world’s most advanced and fuel-efficient single-aisle aircraft family. The baseline A320neo jetliner has a choice of two new-generation engines (the PurePower PW1100G-JM from Pratt and Whitney and the LEAP-1A from CFM International) and features large, fuel-saving wingtip devices known as Sharklets.",
           "techSpecs": [
             {
               "name": "Engines",
-              "value": "Rolls-Royce Trent 7000"
+              "value": "CFM LEAP 1A-26"
             },
             {
               "name": "APU",
               "value": "APS3200"
             }
           ],
-          "targetDirectory": "headwindsim-aircraft-a330-900",
+          "targetDirectory": "flybywire-aircraft-a320-neo",
           "alternativeNames": [
-            "headwind-aircraft-a330-900",
-            "A339X",
-            "a339x"
+            "A32NX",
+            "a32nx"
           ],
           "tracks": [
             {
-              "name": "Release",
-              "key": "a339x-stable",
-              "url": "https://cdn.headwindsim.net/addons/a339x/release",
+              "name": "Stable",
+              "key": "a32nx-stable",
+              "url": "https://flybywirecdn.com/addons/a32nx/stable",
               "alternativeUrls": [
-                "external/a339x/stable"
+                "external/a32nx/stable",
+                "https://cdn.flybywiresim.com/addons/a32nx/stable"
               ],
-              "description": "Stable is our variant that has the least bugs and best performance. This version will not always be up to date but we guarantee its compatibility with each major patch from MSFS.\n\n**SimBrief Airframes for Stable**\n\nAirframe for: [A330-900](https://dispatch.simbrief.com/airframes/share/352855_1683790837790)\n\nAirframe for: [ACJ330-900](https://dispatch.simbrief.com/airframes/share/352855_1683790837791)",
+              "description": "Stable is our variant that has the least bugs and best performance. This version will not always be up to date but we guarantee its compatibility with each major patch from MSFS.",
               "isExperimental": false,
               "releaseModel": {
-                "type": "CDN"
+                "type": "fragmenter"
               }
             },
-            {
-              "name": "Pre-Release",
-              "key": "a339x-prerelease",
-              "url": "https://cdn.headwindsim.net/addons/a339x/staging",
-              "description": "This is a pre-release version of our Addon used for public testing before the official launch. You can choose between the stable build, which is the final version, or the prerelease build, which may have some bugs or incomplete features but is useful for testing and providing feedback to our developers.\n\n**SimBrief Airframes for Pre-Release**\n\nAirframe for: [A330-900](https://dispatch.simbrief.com/airframes/share/352855_1683790837790)\n\nAirframe for: [ACJ330-900](https://dispatch.simbrief.com/airframes/share/352855_1683790837791)",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A339X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            }
-          ],
-          "incompatibleAddons": [
-            {
-              "title": "Toolbar Pushback",
-              "creator": "AmbitiousPilots",
-              "description": "This add-on sometimes causes performance issues and also sometimes prevents the A339X from taxiing. Consider removing it if you experience these issues."
-            },
-            {
-              "title": "z-Newlight-settinglight-headwind-a330neo",
-              "creator": "Nicottine",
-              "description": "Before installing and utilizing the A339X, it is imperative to remove this add-on. This particular add-on overrides crucial light components, thereby disabling the functionality of cockpit lights and rendering the model inoperable."
-            },
-            {
-              "title": "Headwind A339X Weather Radar Mod",
-              "creator": "",
-              "description": "It is required to remove this add-on before installing and using the A339X. This add-on overrides A339X components may render the A339X unusable."
-            }
-          ],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://docs.flybywiresim.com/fbw-a32nx/",
-                "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/airbus-a330-900",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "key": "A333X",
-          "name": "A333X",
-          "repoOwner": "headwindsim",
-          "repoName": "aircraft",
-          "category": "@airbus",
-          "aircraftName": "A330-300 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A333X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A333X-Light.svg",
-          "enabled": false,
-          "backgroundImageUrls": [
-            "https://media.discordapp.net/attachments/965039492228587551/1167459391247753277/1250410_20231025194449_1.png?ex=654e3449&is=653bbf49&hm=d2a352c975cf94e538b427eea3822a3ac70eb4004c70ec9a6773b856bec7c662"
-          ],
-          "shortDescription": "Airbus A330-300 Series",
-          "description": "The Airbus A333-300 is a wide-body airliner that is part of the A330 family of commercial jets. It is a variant of the A330neo (new engine option) series, which also includes the larger A330-900. The A330-800 is designed to be a more fuel-efficient and cost-effective alternative to the older A330-200 model.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "Rolls-Royce Trent 700"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "headwindsim-aircraft-a330-300",
-          "alternativeNames": [
-            "A333X",
-            "a333x"
-          ],
-          "tracks": [
             {
               "name": "Development",
-              "key": "a333x-dev",
-              "url": "https://cdn.headwindsim.net/addons/a333x/development",
+              "key": "a32nx-dev",
+              "url": "https://flybywirecdn.com/addons/a32nx/master",
               "alternativeUrls": [
-                "external/a333x/main"
+                "https://cdn.flybywiresim.com/addons/a32nx/cfbw-cap",
+                "https://cdn.flybywiresim.com/addons/a32nx/cfbw",
+                "external/a32nx/master",
+                "https://cdn.flybywiresim.com/addons/a32nx/master",
+                "https://flybywirecdn.com/addons/a32nx/experimental",
+                "external/a32nx/experimental",
+                "https://cdn.flybywiresim.com/addons/a32nx/experimental",
+                "https://github.com/flybywiresim/a32nx/releases/download/assets/experimental/"
               ],
-              "description": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
-              "isExperimental": true,
-              "warningContent": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
+              "description": "Development will have the latest features that will end up in the next stable. Bugs are to be expected. It updates whenever something is added to the 'master' branch on Github. Please visit our discord for support.",
+              "isExperimental": false,
               "releaseModel": {
-                "type": "CDN"
-              }
-            },
-            {
-              "name": "Experimental",
-              "key": "a333x-exp",
-              "url": "https://cdn.headwindsim.net/addons/a333x/experimental",
-              "alternativeUrls": [
-                "external/a333x/experimental"
-              ],
-              "description": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
-              "isExperimental": true,
-              "warningContent": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
-              "releaseModel": {
-                "type": "CDN"
+                "type": "fragmenter"
               }
             }
           ],
           "dependencies": [
             {
-              "addon": "@headwindsim/simbridge",
+              "addon": "@flybywiresim/simbridge",
               "optional": true,
-              "modalText": "SimBridge allows the A333X to expose remote tools like the Web MCDU, as well as use the external terrain database."
+              "modalText": "SimBridge allows the A32NX to expose remote tools like the Web MCDU, as well as use the external terrain database."
             }
           ],
           "incompatibleAddons": [
             {
-              "title": "Toolbar Pushback",
-              "creator": "AmbitiousPilots",
-              "description": "This add-on sometimes causes performance issues and also sometimes prevents the A333X from taxiing. Consider removing it if you experience these issues."
-            }
-          ],
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "name": "SU95X",
-          "key": "su95x",
-          "repoOwner": "headwindsim",
-          "repoName": "aircraft",
-          "category": "@sukhoi",
-          "aircraftName": "Superjet 100 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/SU95X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/SU95X-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/SU95X/installer_bg.png"
-          ],
-          "shortDescription": "Sukhoi Superjet 100 Series",
-          "description": "Sukhoi Superjet 100 is a regional jet designed by Sukhoi Civil Aircraft. It replaces Tupolev Tu-134 and Yakovlev Yak-42, as well as competes with Embraer E190 and Bombardier CRJ1000. It is the first Russian airliners designed after the fall of the Soviet Union. It uses PowerJet (Joint Venture between Safran and Russias NPO Saturn) SaM 146 to power the aircraft. While it receives some international orders, SSJ100 has trouble gaining popularity outside Russia due to spare parts issues.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "SaM146-1S18"
+              "title": "FlightFlow | IMPROVED TEXTURES MOD",
+              "creator": "FlightFlow",
+              "description": "It is recommended to remove this add-on/mod before installing and using the A32NX. This add-on/mod is known to override A32NX components and cause unexpected behavior and issues when flying the A32NX."
             },
             {
-              "name": "APU",
-              "value": "RE-220(RJ)"
-            }
-          ],
-          "targetDirectory": "headwindsim-aircraft-su100-95",
-          "alternativeNames": [
-            "headwind-aircraft-su100-95",
-            "SU95X",
-            "su95x"
-          ],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "su95x-stable",
-              "url": "https://github.com/headwindsim/SU95X/releases/download/vstable/",
-              "alternativeUrls": [
-                "external/su95x/stable"
-              ],
-              "description": "Stable is our variant that is based on the FlyByWire A32NX stable version and has the fewest issues and best performance. This version won't always up-to-date, but we promise that it will work with all of MSFS's significant updates.",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "githubRelease"
-              }
+              "title": "Horizon Simulations A319ceo",
+              "packageVersion": "\u003C0.6.1",
+              "description": "It is recommended to upgrade to the latest version (0.6.1 or later) or to remove this add-on before installing and using the A32NX. The older versions of this add-on are known to override A32NX components and to break the A32NX."
             },
             {
-              "name": "Pre-Release",
-              "key": "su95x-prerelease",
-              "url": "https://cdn.headwindsim.net/addons/su95x/staging",
-              "description": "This is a pre-release version of our Addon used for public testing before the official launch. You can choose between the stable build, which is the final version, or the prerelease build, which may have some bugs or incomplete features but is useful for testing and providing feedback to our developers.",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
+              "title": "Horizon Simulations A321neo",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. This add-on is known to override A32NX components and cause unexpected behavior and issues when flying the A32NX."
+            },
             {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the SU95X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            }
-          ],
-          "incompatibleAddons": [
+              "title": "LVFR A321neo FBW A32NX Compatibility Mod",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. This add-on is known to override A32NX components and to break the A32NX."
+            },
+            {
+              "title": "LVFR A321neo Extreme",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. This add-on is known to override A32NX components and cause unexpected behavior and issues when flying the A32NX."
+            },
+            {
+              "title": "lvfr-airbus-a319-fbw-standalone",
+              "packageVersion": "\u003C0.6.1",
+              "description": "It is recommended to upgrade to the latest version (0.6.1 or later) or to remove this add-on before installing and using the A32NX. The older versions of this add-on are known to override A32NX components and to break the A32NX."
+            },
+            {
+              "title": "lvfr-airbus-a319-ceo-fbw-compatibility",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. This add-on is known to override A32NX components and cause unexpected behavior and issues when flying the A32NX."
+            },
+            {
+              "title": "[MOD] Mugz FBW A32NX Dev",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and renders the A32NX unusable."
+            },
+            {
+              "title": "[MOD] Mugz FBW A32NX Stable",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and renders the A32NX unusable."
+            },
             {
               "title": "Toolbar Pushback",
               "creator": "AmbitiousPilots",
-              "description": "This add-on sometimes causes performance issues and also sometimes prevents the SU95X from taxiing. Consider removing it if you experience these issues."
+              "description": "This add-on sometimes causes performance issues and also sometimes prevents the A32NX from taxiing. Consider removing it if you experience these issues."
+            },
+            {
+              "title": "Asobo_A320_A (A32NX Converted)",
+              "creator": "UnitDeath",
+              "description": "It is required to remove this livery before installing and using the A32NX as it breaks the A32NX"
+            },
+            {
+              "title": "xeffect-320",
+              "creator": "swingbird",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. It is known known to override A32NX files and to break the A32NX."
+            },
+            {
+              "title": "z-Newlight-settinglight-FBW-A320NX-dev",
+              "creator": "Nicottine",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and renders the A32NX unusable."
+            },
+            {
+              "title": "z-Newlight-settinglight-FBW-A320NX-stable",
+              "creator": "Nicottine",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and renders the A32NX unusable."
+            },
+            {
+              "title": "z-Newlight-settinglight-FBW-A320NX-EXP",
+              "creator": "Nicottine",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and renders the A32NX unusable."
+            },
+            {
+              "title": "FBW A32NX Weather Radar Mod",
+              "creator": "",
+              "description": "It is required to remove this add-on before installing and using the A32NX. This add-on overrides A32NX components and may render the A32NX unusable."
+            },
+            {
+              "title": "China Eastern",
+              "creator": "JasonC68",
+              "description": "It is recommended to remove this add-on before installing and using the A32NX. This add-on is known to override A32NX components and cause unexpected behavior and issues when flying the A32NX."
             }
           ],
           "myInstallPage": {
@@ -328,10 +207,6 @@
               {
                 "url": "https://docs.flybywiresim.com/fbw-a32nx/",
                 "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/sukhoi-superjet-100/",
-                "title": "Add-Ons"
               }
             ],
             "directories": [
@@ -350,219 +225,55 @@
           ]
         },
         {
-          "key": "A332X",
-          "name": "A332X",
-          "repoOwner": "headwindsim",
+          "name": "A380X",
+          "key": "A380X",
+          "repoOwner": "flybywiresim",
           "repoName": "aircraft",
-          "category": "@airbus",
-          "aircraftName": "A330-200 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A332X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A332X-Light.svg",
+          "category": "@aircraft",
+          "aircraftName": "A380-842",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-a380x/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-a380x/light.svg",
           "enabled": false,
           "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/A21NX/a321neo_background_1.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fbw-a380x/a380x.png"
           ],
-          "shortDescription": "Airbus A330-200 Series",
-          "description": "The Airbus A333-200 is a wide-body airliner that is part of the A330 family of commercial jets. It is a variant of the A330neo (new engine option) series, which also includes the larger A330-900. The A330-800 is designed to be a more fuel-efficient and cost-effective alternative to the older A330-200 model.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "Rolls-Royce Trent 700"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "headwindsim-aircraft-a330-200",
-          "alternativeNames": [
-            "A332X",
-            "a332x"
-          ],
+          "shortDescription": "Airbus A380-800",
+          "description": "",
+          "targetDirectory": "A380",
           "tracks": [],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A333X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            }
-          ],
-          "incompatibleAddons": [
-            {
-              "title": "Toolbar Pushback",
-              "creator": "AmbitiousPilots",
-              "description": "This add-on sometimes causes performance issues and also sometimes prevents the A332X from taxiing. Consider removing it if you experience these issues."
-            }
-          ],
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "key": "A338X",
-          "name": "A338X",
-          "repoOwner": "headwindsim",
-          "repoName": "aircraft",
-          "category": "@airbus",
-          "aircraftName": "A330-800neo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A338X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/A338X-Light.svg",
-          "enabled": false,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/A338X/a330neo_1.png"
-          ],
-          "shortDescription": "Airbus A330-800 Series",
-          "description": "The Airbus A330-800 is a wide-body airliner that is part of the A330 family of commercial jets. It is a variant of the A330neo (new engine option) series, which also includes the larger A330-900. The A330-800 is designed to be a more fuel-efficient and cost-effective alternative to the older A330-200 model.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "Rolls-Royce Trent 7000"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "headwindsim-aircraft-a330-800",
-          "alternativeNames": [
-            "A338X",
-            "a338x"
-          ],
-          "tracks": [],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A338X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            }
-          ],
-          "incompatibleAddons": [
-            {
-              "title": "Toolbar Pushback",
-              "creator": "AmbitiousPilots",
-              "description": "This add-on sometimes causes performance issues and also sometimes prevents the A338X from taxiing. Consider removing it if you experience these issues."
-            }
-          ],
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "key": "a339x-livery",
-          "name": "A339X Livery Package",
-          "repoOwner": "headwindsim",
-          "repoName": "aircraft",
-          "category": "@livery",
-          "aircraftName": "A339X",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/A339X/livery_package_1.png"
-          ],
-          "shortDescription": "A339X Livery Package",
-          "description": "This package includes liveries for AirBelgium, Condor (Beach, Island, and Sea variants), Corsair, Delta, Hifly, and TAP (Air Portugal and STAR Alliance variants), all carefully designed to match the real-life paint schemes of these airlines. Whether you're looking to simulate a transatlantic flight with Delta, a tropical getaway with Corsair, or a business trip with TAP, our liveries will help you fully immerse in your simulation experience.",
-          "targetDirectory": "headwindsim-a339x-livery-package",
-          "alternativeNames": [],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "a339x-livery-release",
-              "url": "https://cdn.headwindsim.net/addons/a339x-livery-package/release",
-              "description": "This package includes liveries for AirBelgium, Condor (Beach, Island, and Sea variants), Corsair, Delta, Hifly, and TAP (Air Portugal and STAR Alliance variants), all carefully designed to match the real-life paint schemes of these airlines. Whether you're looking to simulate a transatlantic flight with Delta, a tropical getaway with Corsair, or a business trip with TAP, our liveries will help you fully immerse in your simulation experience.",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/a339x",
-              "optional": false,
-              "modalText": "Will need base package to be working."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://flightsim.to/add-ons/airbus-a330-900",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "package",
-                  "path": "resources"
-                },
-                "title": "Resources"
-              }
-            ]
-          },
           "disallowedRunningExternalApps": [
             "@/msfs"
           ]
         },
         {
-          "key": "su95x-livery",
-          "name": "SU95X Livery Package",
-          "repoOwner": "headwindsim",
-          "repoName": "aircraft",
-          "category": "@livery",
-          "aircraftName": "SU95X",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Light.svg",
+          "name": "KFBW",
+          "key": "KFBW",
+          "category": "@scenery",
+          "aircraftName": "FBW Headquarters",
           "enabled": true,
+          "overrideAddonWhileHidden": "A380X",
           "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/headwindsim/branding/main/images/SU95X/livery_package.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fbw-kfbw/0.png"
           ],
-          "shortDescription": "SU95X Livery Package",
-          "description": "This package includes liveries for Aeroflot, Armavia, Azimuth, Interjet, RedWings and Yakutia, all carefully designed to match the real-life paint schemes of these airlines.",
-          "targetDirectory": "headwindsim-su95x-livery-package",
-          "alternativeNames": [],
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-kfbw/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-kfbw/light.svg",
+          "shortDescription": "FlyByWire Headquarters",
+          "description": "Welcome to KFBW! \n\nThis is a showcase of the A380 project. Spawn at KFBW or fly there! The nearest airport is KTNP (Twenty-Nine Palms, California, USA). There is an ILS without waypoints to Runway 10. Freq: 108.9 CRS: 100  \nThe airport is designed to be used by our developers for flight testing of the A380 and also designed to match the real-world A380 testing airport in Hamburg, Germany (EDHI).  \nThe location allows for quick test flights to LAX, which is also serviced by the A380.  \nUse the developer or drone camera to explore! \n\nHappy holidays and enjoy! -FBW Team",
+          "targetDirectory": "flybywire-airport-kfbw-flybywire-field",
           "tracks": [
             {
               "name": "Release",
-              "key": "su95x-livery-release",
-              "url": "https://cdn.headwindsim.net/addons/su95x-livery-package/release",
-              "description": "This package includes liveries for Aeroflot, Armavia, Azimuth, Interjet, RedWings and Yakutia, all carefully designed to match the real-life paint schemes of these airlines.",
+              "key": "kfbw-release",
+              "url": "https://flybywirecdn.com/addons/kfbw/release/",
+              "alternativeUrls": [
+                "https://cdn.flybywiresim.com/addons/kfbw/release/"
+              ],
               "isExperimental": false,
               "releaseModel": {
                 "type": "CDN"
-              }
+              },
+              "description": "FlyByWire Headquarters is transformed into a winter wonderland - complete with a plethora of festive decorations in addition to the standard progress showcase."
             }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/su95x",
-              "optional": false,
-              "modalText": "Will need base package to be working."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://flightsim.to/add-ons/sukhoi-superjet-100/",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "package",
-                  "path": "resources"
-                },
-                "title": "Resources"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs"
           ]
         },
         {
@@ -572,15 +283,15 @@
           "repoOwner": "flybywiresim",
           "repoName": "simbridge",
           "aircraftName": "FBW SimBridge",
-          "titleImageUrl": "https://flybywiresim.b-cdn.net/installer/media-assets/addon-titles/fbw-simbridge/dark.svg",
-          "titleImageUrlSelected": "https://flybywiresim.b-cdn.net/installer/media-assets/addon-titles/fbw-simbridge/light.svg",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-simbridge/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fbw-simbridge/light.svg",
           "enabled": true,
           "backgroundImageUrls": [
-            "https://flybywiresim.b-cdn.net/installer/media-assets/addon-headers/fbw-simbridge/0.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fbw-simbridge/0.png"
           ],
           "backgroundImageShadow": false,
           "shortDescription": "Airbus A380-800",
-          "description": "SimBridge is an external application which allows FBW aircraft to communicate with components located outside the simulator. SimBridge will be used for a number of features requiring external data (such as TAWS terrain display), as well as for functionality providing remote access to aircraft systems or data.",
+          "description": "\u003Cspan style=\"color: rgb(255, 106, 0);\"\u003E&#9888; Important: Starting with version 0.6.0, custom resources such as PDF Charts and Company Routes must be stored in the Documents folder (typically located at `C:\\Users\\\u003CUsername\u003E\\Documents\\FlyByWireSim\\Simbridge\\resources)`. \u003Cbr\u003E Please ensure you back up your files before updating. After the update, transfer your files to this new location to keep them safe from future updates. You can also use the Resources button in the About section of the installer to locate the folder.\u003C/span\u003E \n\nSimBridge is an external app that enables FlyByWire Simulations aircraft to communicate outside your simulator. From remote displays to external terrain display rendering, it is used for a variety of optional features.",
           "targetDirectory": "flybywire-externaltools-simbridge",
           "tracks": [
             {
@@ -589,9 +300,12 @@
               "releaseModel": {
                 "type": "githubRelease"
               },
-              "url": "https://cdn.flybywiresim.com/addons/simbridge/release/",
+              "url": "https://flybywirecdn.com/addons/simbridge/release/",
+              "alternativeUrls": [
+                "https://cdn.flybywiresim.com/addons/simbridge/release/"
+              ],
               "isExperimental": false,
-              "description": "SimBridge is an external app that enables FlyByWire Simulations aircraft to communicate outside your simulator. From remote displays to external terrain display rendering, it is used for a variety of optional features."
+              "description": "\u003Cspan style=\"color: rgb(255, 106, 0);\"\u003E&#9888; Important: Starting with version 0.6.0, custom resources such as PDF Charts and Company Routes must be stored in the Documents folder (typically located at `C:\\Users\\\u003CUsername\u003E\\Documents\\FlyByWireSim\\Simbridge\\resources)`. \u003Cbr\u003E Please ensure you back up your files before updating. After the update, transfer your files to this new location to keep them safe from future updates. You can also use the Resources button in the About section of the installer to locate the folder.\u003C/span\u003E \n\nSimBridge is an external app that enables FlyByWire Simulations aircraft to communicate outside your simulator. From remote displays to external terrain display rendering, it is used for a variety of optional features."
             }
           ],
           "disallowedRunningExternalApps": [
@@ -614,8 +328,8 @@
             "directories": [
               {
                 "location": {
-                  "in": "package",
-                  "path": "resources"
+                  "in": "documents",
+                  "path": "FlyByWireSim/Simbridge/resources"
                 },
                 "title": "Resources"
               }
@@ -632,83 +346,108 @@
         {
           "text": "Website",
           "action": "openBrowser",
-          "url": "https://headwindsim.net/"
+          "url": "https://flybywiresim.com/"
         },
         {
           "text": "Discord",
           "action": "openBrowser",
-          "url": "https://discord.headwindsim.net/",
-          "inline": true
+          "url": "https://discord.gg/flybywire"
         },
         {
-          "text": "Support Us!",
+          "text": "Twitter",
           "action": "openBrowser",
-          "url": "https://www.patreon.com/headwindsim"
+          "url": "https://twitter.com/FlyByWireSim",
+          "inline": true
         }
       ]
     },
     {
-      "name": "Horizon Simulations",
-      "key": "horizonsim",
-      "logoUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/Horizon_Simulations_Logo.svg",
+      "name": "Salty Simulations",
+      "key": "salty",
+      "logoUrl": "https://flybywirecdn.com/installer/media-assets/publisher-icons/salty/0.svg",
       "defs": [
         {
           "kind": "addonCategory",
           "key": "aircraft",
           "title": "Aircraft"
-        },
+        }
+      ],
+      "addons": [
         {
-          "kind": "addonCategory",
-          "key": "airbus",
-          "title": "Airbus"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "latinvfr_airbus",
-          "title": "LatinVFR Airbus"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "boeing",
-          "title": "Boeing"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "scenery",
-          "title": "Scenery"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "livery",
-          "title": "Livery"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "other",
-          "title": "Other"
-        },
-        {
-          "kind": "addonCategory",
-          "key": "simbridge",
-          "styles": [
-            "align-bottom"
+          "key": "74S",
+          "name": "74S",
+          "repoOwner": "saltysimulations",
+          "repoName": "salty-747",
+          "category": "@aircraft",
+          "aircraftName": "B747-8I",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/salty-74S/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/salty-74S/light.svg",
+          "enabled": true,
+          "backgroundImageUrls": [
+            "https://raw.githubusercontent.com/saltysimulations/branding/main/png/salty_banner.png"
+          ],
+          "shortDescription": "Boeing 747-8I",
+          "description": "The Boeing 747-8 is the largest variant of the 747. It features a thicker and wider wing, allowing it to hold more fuel, as well as raked wingtips. The aircraft, powered by the more efficient General Electric GEnx engines, can carry 467 passengers in a typical three-class configuration, and has a range of 7,730 nautical miles.",
+          "techSpecs": [
+            {
+              "name": "Engines",
+              "value": "GEnx-2B"
+            }
+          ],
+          "targetDirectory": "salty-747",
+          "tracks": [
+            {
+              "name": "Stable",
+              "key": "74S-stable",
+              "url": "https://github.com/saltysimulations/salty-747/releases/download/vinstaller-stable/",
+              "description": "Stable is our variant that has the least bugs and best performance. This version will not always be up to date but we guarantee its compatibility with each major patch from MSFS.",
+              "isExperimental": false,
+              "releaseModel": {
+                "type": "githubRelease"
+              }
+            },
+            {
+              "name": "Development",
+              "key": "74S-dev",
+              "url": "https://github.com/saltysimulations/salty-747/releases/download/vinstaller/",
+              "description": "The development version has all the latest features that will end up in the next stable. You may encounter bugs more frequently.",
+              "isExperimental": false,
+              "releaseModel": {
+                "type": "githubBranch",
+                "branch": "master"
+              }
+            }
           ]
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Discord",
+          "action": "openBrowser",
+          "url": "https://discord.gg/S4PJDwk"
         },
         {
-          "kind": "externalApp",
-          "key": "mcdu-server",
-          "prettyName": "MCDU Server",
-          "detectionType": "ws",
-          "url": "ws://localhost:8380"
-        },
+          "text": "Twitter",
+          "action": "openBrowser",
+          "url": "https://twitter.com/Salty_Sim",
+          "inline": true
+        }
+      ]
+    },
+    {
+      "name": "FSLTL",
+      "key": "fsltl",
+      "logoUrl": "https://flybywirecdn.com/installer/media-assets/publisher-icons/fsltl/0.png",
+      "logoSize": 36,
+      "defs": [
         {
           "kind": "externalApp",
-          "key": "simbridge-app",
-          "prettyName": "SimBridge",
+          "key": "traffic-injector-app",
+          "prettyName": "FSLTL Traffic Injector",
           "detectionType": "http",
-          "url": "http://localhost:8380/health",
-          "killUrl": "http://localhost:8380/health/kill",
-          "killMethod": "GET"
+          "url": "http://localhost:42888",
+          "killUrl": "http://localhost:42888/kill",
+          "killMethod": "POST"
         },
         {
           "kind": "externalApp",
@@ -720,619 +459,102 @@
       ],
       "addons": [
         {
-          "name": "A318ceo",
-          "key": "a318ceo",
-          "repoOwner": "horizon-simulations",
-          "repoName": "hs-flybywire",
-          "category": "@latinvfr_airbus",
-          "aircraftName": "LatinVFR A318ceo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A318ceo-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A318ceo-Light.svg",
+          "key": "traffic-base-models",
+          "name": "FSLTL Traffic",
+          "aircraftName": "FSLTL Traffic",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fsltl/base-models/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fsltl/base-models/light.svg",
           "enabled": true,
           "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/A318ceo/installer_bg.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fsltl/traffic/0.png"
           ],
-          "shortDescription": "Airbus A318ceo Series",
-          "description": "The Airbus A318ceo is a narrow-body airliner developed by Airbus as part of the Airbus A320 family. The A318ceo can accommodate around 107 to 132 passengers in a typical two-class layout, or more if configured exclusively in an economy class layout. It has a range of approximately 3,100 nautical miles. It can be powered by either the CFM56-5B or Pratt & Whitney PW6000 engines.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "CFM56-5B7"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "lvfr-horizonsim-airbus-a318-ceo",
-          "alternativeNames": [
-            "horizonsim-aircraft-a318-ceo",
-            "horizonsim-aircraft-a318ceo"
-          ],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "a318ceo-release",
-              "url": "https://cdn.horizonsimulations.com/addons/lvfr-a318ceo/release",
-              "alternativeUrls": [
-                "external/a318ceo/stable"
-              ],
-              "description": "The Airbus A318ceo is a narrow-body airliner developed by Airbus as part of the Airbus A320 family. The A318ceo can accommodate around 107 to 132 passengers in a typical two-class layout, or more if configured exclusively in an economy class layout. It has a range of approximately 3,100 nautical miles. It can be powered by either the CFM56-5B or Pratt & Whitney PW6000 engines.\n\n**Please be aware that you will need the LatinVFR Airbus A318ceo Addon to use this.**",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A318X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            },
-            {
-              "addon": "lvfr/Airbus A318ceo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A318ceo package, you MUST have the LatinVFR Airbus A318ceo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the LatinVFR package. Ensure you have a legitimate and fully functional copy of the LatinVFR Airbus A318ceo before proceeding with the installation to avoid any issues or conflicts."
-            },
-            {
-              "addon": "Asobo Studio/A320neo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A318ceo package, you MUST have the Asobo Airbus A320neo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo package. Ensure you have a legitimate and fully functional copy of the Asobo Airbus A320neo before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://docs.flybywiresim.com/fbw-a32nx/",
-                "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/latinvfr-airbus-a318",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "name": "A319ceo",
-          "key": "a319ceo",
-          "repoOwner": "horizon-simulations",
-          "repoName": "hs-flybywire",
-          "category": "@latinvfr_airbus",
-          "aircraftName": "LatinVFR A319ceo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A319ceo-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A319ceo-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/A319ceo/installer_bg.png"
-          ],
-          "shortDescription": "Airbus A319ceo Series",
-          "description": "The Airbus A319ceo is a narrow-body airliner developed by Airbus as part of the Airbus A320 family. The A319ceo typically seats 124 to 156 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of around 3,700 nautical miles. It can be powered by either the CFM56-5B or IAE V2500 engines.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "CFM56-5B7"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "lvfr-horizonsim-airbus-a319-ceo",
-          "alternativeNames": [
-            "horizonsim-aircraft-a319-ceo",
-            "horizonsim-aircraft-a319ceo"
-          ],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "a319ceo-release",
-              "url": "https://cdn.horizonsimulations.com/addons/lvfr-a319ceo/release",
-              "alternativeUrls": [
-                "external/a319ceo/stable"
-              ],
-              "description": "The Airbus A319ceo is a narrow-body airliner developed by Airbus as part of the Airbus A320 family. The A319ceo typically seats 124 to 156 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of around 3,700 nautical miles. It can be powered by either the CFM56-5B or IAE V2500 engines.\n\n**Please be aware that you will need the LatinVFR Airbus A319ceo Addon to use this.**",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A319X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            },
-            {
-              "addon": "lvfr/Airbus A319ceo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A319ceo package, you MUST have the LatinVFR Airbus A319ceo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the LatinVFR package. Ensure you have a legitimate and fully functional copy of the LatinVFR Airbus A319ceo before proceeding with the installation to avoid any issues or conflicts."
-            },
-            {
-              "addon": "Asobo Studio/A320neo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A318ceo package, you MUST have the Asobo Airbus A320neo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo package. Ensure you have a legitimate and fully functional copy of the Asobo Airbus A320neo before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://docs.flybywiresim.com/fbw-a32nx/",
-                "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/latinvfr-airbus-a319",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "name": "A320ceo",
-          "key": "a320ceo",
-          "repoOwner": "horizon-simulations",
-          "repoName": "hs-flybywire",
-          "category": "@latinvfr_airbus",
-          "aircraftName": "LatinVFR A320ceo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A320ceo-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A320ceo-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/A320ceo/installer_bg.png"
-          ],
-          "shortDescription": "Airbus A320ceo Series",
-          "description": "The Airbus A320ceo is a narrow-body airliner developed by Airbus as the flagship model of the Airbus A320 family. The A320ceo typically seats 150 to 180 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of approximately 3,300 nautical miles. It can be powered by either the CFM56-5B or IAE V2500 engines.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "CFM56-5B7"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "lvfr-horizonsim-airbus-a320-ceo",
-          "alternativeNames": [
-            "horizonsim-aircraft-a320-ceo",
-            "horizonsim-aircraft-a320ceo"
-          ],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "a320ceo-release",
-              "url": "https://cdn.horizonsimulations.com/addons/lvfr-a320ceo/release",
-              "alternativeUrls": [
-                "external/a320ceo/stable"
-              ],
-              "description": "The Airbus A320ceo is a narrow-body airliner developed by Airbus as the flagship model of the Airbus A320 family. The A320ceo typically seats 150 to 180 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of approximately 3,300 nautical miles. It can be powered by either the CFM56-5B or IAE V2500 engines.\n\n**Please be aware that you will need the LatinVFR Airbus A320ceo Addon to use this.**",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A319X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            },
-            {
-              "addon": "lvfr/Airbus A320ceo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A320ceo package, you MUST have the LatinVFR Airbus A320ceo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the LatinVFR package. Ensure you have a legitimate and fully functional copy of the LatinVFR Airbus A320ceo before proceeding with the installation to avoid any issues or conflicts."
-            },
-            {
-              "addon": "Asobo Studio/A320neo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A318ceo package, you MUST have the Asobo Airbus A320neo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo package. Ensure you have a legitimate and fully functional copy of the Asobo Airbus A320neo before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://docs.flybywiresim.com/fbw-a32nx/",
-                "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/latinvfr-a320ceo",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "name": "A321neo",
-          "key": "a321neo",
-          "repoOwner": "horizon-simulations",
-          "repoName": "hs-flybywire",
-          "category": "@latinvfr_airbus",
-          "aircraftName": "LatinVFR A321neo Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A321neo-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/A321neo-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/A321neo/installer_bg.png"
-          ],
-          "shortDescription": "Airbus A321neo Series",
-          "description": "The Airbus A321neo is a narrow-body airliner developed by Airbus as an evolution of the Airbus A321 member of the A320 family. The A321neo typically seats between 185 to 240 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of up to 4,000 nautical miles, depending on specific configurations and cabin layouts. The A321neo is powered by a choice of either the Pratt & Whitney PW1100G-JM or the CFM International LEAP-1A engines.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "CFM56-5B7"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "lvfr-horizonsim-airbus-a321-neo",
-          "alternativeNames": [
-            "horizonsim-aircraft-a321-neo",
-            "horizonsim-aircraft-a321neo"
-          ],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "a321neo-release",
-              "url": "https://cdn.horizonsimulations.com/addons/lvfr-a321neo/release",
-              "alternativeUrls": [
-                "external/a321neo/stable"
-              ],
-              "description": "The Airbus A321neo is a narrow-body airliner developed by Airbus as an evolution of the Airbus A321 member of the A320 family. The A321neo typically seats between 185 to 240 passengers in a two-class layout, or more when configured exclusively in an economy class layout. It has a range of up to 4,000 nautical miles, depending on specific configurations and cabin layouts. The A321neo is powered by a choice of either the Pratt & Whitney PW1100G-JM or the CFM International LEAP-1A engines.\n\n**Please be aware that you will need the LatinVFR Airbus A321neo Addon to use this.**",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@headwindsim/simbridge",
-              "optional": true,
-              "modalText": "SimBridge allows the A321X to expose remote tools like the Web MCDU, as well as use the external terrain database."
-            },
-            {
-              "addon": "lvfr/Airbus A321neo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A321neo package, you MUST have the LatinVFR Airbus A321neo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the LatinVFR package. Ensure you have a legitimate and fully functional copy of the LatinVFR Airbus A321neo before proceeding with the installation to avoid any issues or conflicts."
-            },
-            {
-              "addon": "Asobo Studio/A320neo",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations A318ceo package, you MUST have the Asobo Airbus A320neo installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo package. Ensure you have a legitimate and fully functional copy of the Asobo Airbus A320neo before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://docs.flybywiresim.com/fbw-a32nx/",
-                "title": "Documentation"
-              },
-              {
-                "url": "https://flightsim.to/add-ons/latinvfr-airbus-a321neo",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs",
-            "@/mcdu-server"
-          ]
-        },
-        {
-          "name": "B789",
-          "key": "b789",
-          "repoOwner": "horizon-simulations",
-          "repoName": "HS-B787-9",
-          "category": "@boeing",
-          "aircraftName": "787-9 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/B789-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/B789-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/B789/installer_bg.png"
-          ],
-          "shortDescription": "Boeing 787-9 Series",
-          "description": "The Boeing 787-9 Dreamliner is a wide-body twin-engine jet airliner developed by Boeing as part of the 787 Dreamliner family. The 787-9 typically accommodates between 290 to 296 passengers in a three-class configuration, with the capacity to carry up to around 406 passengers in a two-class configuration. It boasts a range of approximately 7,530 nautical miles. The 787-9 is exclusively powered by a choice of two engines: either the Rolls-Royce Trent 1000 or the General Electric GEnx-1B.",
-          "techSpecs": [
-            {
-              "name": "Engine",
-              "value": "RR Trent 1000"
-            },
-            {
-              "name": "Engine",
-              "value": "GEnx-1B"
-            },
-            {
-              "name": "APU",
-              "value": "APS5000"
-            }
-          ],
-          "targetDirectory": "horizonsim-aircraft-787-9",
+          "shortDescription": "FSLTL Traffic Base Models",
+          "description": "FSLTL is a free standalone real-time online traffic overhaul and VATSIM model-matching solution for MSFS.\n\nUtilising native glTF models and MSFS independent online IFR/VFR traffic injection system with stock ATC interaction based on Flightradar24.\n\nThis is the base model / livery pack required for FSLTL Injector, MSFS default live traffic or VATSIM use.",
+          "targetDirectory": "fsltl-traffic-base",
           "alternativeNames": [],
           "tracks": [
             {
-              "name": "Release",
-              "key": "b789-release",
-              "url": "https://cdn.horizonsimulations.com/addons/horizonsim-789/release",
-              "alternativeUrls": [
-                "external/b789/stable"
-              ],
-              "description": "The Boeing 787-9 Dreamliner is a wide-body twin-engine jet airliner developed by Boeing as part of the 787 Dreamliner family. The 787-9 typically accommodates between 290 to 296 passengers in a three-class configuration, with the capacity to carry up to around 406 passengers in a two-class configuration. It boasts a range of approximately 7,530 nautical miles. The 787-9 is exclusively powered by a choice of two engines: either the Rolls-Royce Trent 1000 or the General Electric GEnx-1B.\n\n**Please be aware that you will need the Asobo Boeing 787 Dreamliner Addon to use this.**",
+              "name": "Stable",
+              "key": "release",
+              "url": "https://github.com/FSLiveTrafficLiveries/base/releases/latest/download/",
               "isExperimental": false,
               "releaseModel": {
                 "type": "CDN"
-              }
+              },
+              "description": "Stable release of the aircraft models, liveries and VMR file.\n\nThis packages is required to see matched models / liveries if you are using FSLTL Injector, MSFS default live traffic or VATSIM.\n\nA vmr file is provided in the package for VATSIM client use."
             }
           ],
-          "dependencies": [
-            {
-              "addon": "Asobo Studio/787-10 Dreamliner",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations Boeing 787-9 Add-On, you MUST have the Asobo Studio 787-10 Dreamliner (Included in MSFS Premium Deluxe) installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo Studios package. Ensure you have a legitimate and fully functional copy of the Asobo Studio 787-10 Dreamliner before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://flightsim.to/add-ons/horizon-simulations-boeing-787-9",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
-          },
           "disallowedRunningExternalApps": [
             "@/msfs"
           ]
         },
         {
-          "name": "B78X",
-          "key": "b78X",
-          "repoOwner": "horizon-simulations",
-          "repoName": "HS-B787-10",
-          "category": "@boeing",
-          "aircraftName": "787-10 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/B78X-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/logos/B78X-Light.svg",
-          "enabled": false,
+          "key": "traffic-injector",
+          "name": "FSLTL Injector",
+          "aircraftName": "FSLTL Traffic",
+          "titleImageUrl": "https://flybywirecdn.com/installer/media-assets/addon-titles/fsltl/injector/dark.svg",
+          "titleImageUrlSelected": "https://flybywirecdn.com/installer/media-assets/addon-titles/fsltl/injector/light.svg",
+          "enabled": true,
           "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/B78X/installer_bg.png"
+            "https://flybywirecdn.com/installer/media-assets/addon-headers/fsltl/traffic/0.png"
           ],
-          "shortDescription": "Boeing 787-10 Series",
-          "description": "The Boeing 787-10 Dreamliner is the largest variant of the 787 Dreamliner family developed by Boeing. The 787-10 typically seats between 330 to 340 passengers in a three-class configuration, with the capacity to carry more if configured in denser layouts. It has a range of approximately 6,430 nautical miles. Like its siblings in the 787 family, the 787-10 is exclusively powered by a choice of two engines: either the Rolls-Royce Trent 1000 or the General Electric GEnx-1B.",
-          "techSpecs": [
-            {
-              "name": "Engines",
-              "value": "CFM56-5B7"
-            },
-            {
-              "name": "APU",
-              "value": "APS3200"
-            }
-          ],
-          "targetDirectory": "horizonsim-aircraft-787-10",
-          "alternativeNames": [],
+          "shortDescription": "FSLTL Traffic Injector Software",
+          "description": "FSLTL Live Traffic Injector - giving you a more immersive experience at airports globally!\n\n- Live IFR and VFR traffic based on Flightradar24\n\n- Parked aircraft based on historic real data for immersive full airports\n\n- Ability to have any combination of IFR, VFR and parked aircraft",
+          "targetDirectory": "fsltl-traffic-injector",
           "tracks": [
             {
-              "name": "Development",
-              "key": "b78X-dev",
-              "url": "https://cdn.horizonsimulations.com/addons/horizonsim-78X/development",
-              "alternativeUrls": [
-                "external/b78X/main"
-              ],
-              "description": "Currently not available",
+              "name": "Stable",
+              "key": "release",
+              "url": "https://github.com/FSLiveTrafficLiveries/FSLTL_Injector_Releases/releases/latest/download/",
+              "isExperimental": false,
+              "releaseModel": {
+                "type": "fragmenter"
+              },
+              "description": "Stable version of the FSLTL Traffic Injector for use on stable versions of MSFS.\n\nFollow the user guide at https://www.fslivetrafficliveries.com/user-guide/ before use."
+            },
+            {
+              "name": "Experimental",
+              "key": "development",
+              "url": "https://github.com/FSLiveTrafficLiveries/FSLTL_Injector_Releases/releases/download/beta/",
               "isExperimental": true,
-              "warningContent": "The most recent features that make it into the next stable will be in development. Bugs should be anticipated. It is updated each time a new commit is added to GitHub's \"main\" branch. \n\n**Please be aware that no support will be offered via Discord support channels.**",
+              "warningContent": "No support is offered for this release, it is a preview of features that may be included in future releases.",
               "releaseModel": {
-                "type": "CDN"
-              }
+                "type": "fragmenter"
+              },
+              "description": "Experimental Release that includes features that are not yet ready for stable release.\n\nYou can provide feedback on these new features in the FSLTL Discord.\n\nNo support is offered for issues with this release, new FSLTL users should use stable."
             }
           ],
-          "dependencies": [
-            {
-              "addon": "Asobo Studio/787-10 Dreamliner",
-              "optional": false,
-              "modalText": "To install the Horizon Simulations Boeing 787-9 Add-On, you MUST have the Asobo Studio 787-10 Dreamliner (Included in MSFS Premium Deluxe) installed. This Horizon Simulations add-on will NOT work standalone and is dependent on the core assets and modules provided by the Asobo Studios package. Ensure you have a legitimate and fully functional copy of the Asobo Studio 787-10 Dreamliner before proceeding with the installation to avoid any issues or conflicts."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [],
-            "directories": [
-              {
-                "location": {
-                  "in": "packageCache",
-                  "path": "work"
-                },
-                "title": "Work Folder"
-              }
-            ]
+          "backgroundService": {
+            "executableFileBasename": "fsltl-trafficinjector",
+            "runCheckExternalAppRef": "@/traffic-injector-app",
+            "enableAutostartConfiguration": false
           },
           "disallowedRunningExternalApps": [
-            "@/msfs"
-          ]
-        },
-        {
-          "key": "hs787-cockpit-textures",
-          "name": "787 Cockpit Textures",
-          "repoOwner": "horizon-simulations",
-          "repoName": "HS-B787-Cockpit-Textures",
-          "category": "@boeing",
-          "aircraftName": "787 Series",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Cockpit-Textures-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Cockpit-Textures-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://raw.githubusercontent.com/Horizon-Simulations/branding/main/images/B787-Cockpit-Textures/installer_bg.png"
-          ],
-          "shortDescription": "Horizon Simulations Boeing 787 Cockpit Textures",
-          "description": "Experience enhanced realism in Microsoft Flight Simulator with the cockpit texture pack created by Mike, known as morerightrudder. This exclusive add-on, available only through the Headwind Simulations Installer, features meticulously crafted textures for the B788, B789/B78X cockpits. Compatible with Kuro 787-8, Horizon Simulations B787-9 and B787-10, as well as MSFS Premium Deluxe B787-10, this pack elevates your aviation simulation by offering unparalleled detail and immersion.",
-          "targetDirectory": "horizonsim-787-Cockpit-Textures",
-          "alternativeNames": [],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "hs787-cockpit-textures-release",
-              "url": "https://cdn.horizonsimulations.com/addons/hs-b787-cockpit-texture/release",
-              "description": "Experience enhanced realism in Microsoft Flight Simulator with the cockpit texture pack created by Mike, known as morerightrudder. This exclusive add-on, available only through the Headwind Simulations Installer, features meticulously crafted textures for the B788, B789/B78X cockpits. Compatible with Kuro 787-8, Horizon Simulations B787-9 and B787-10, as well as MSFS Premium Deluxe B787-10, this pack elevates your aviation simulation by offering unparalleled detail and immersion.",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [],
-            "directories": [
-              {
-                "location": {
-                  "in": "package",
-                  "path": "resources"
-                },
-                "title": "Resources"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs"
-          ]
-        },
-        {
-          "key": "hs789-livery",
-          "name": "Boeing 787-9 Livery Package",
-          "repoOwner": "horizon-simulations",
-          "repoName": "HS-789-Liveries",
-          "category": "@livery",
-          "aircraftName": "787-9",
-          "titleImageUrl": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Dark.svg",
-          "titleImageUrlSelected": "https://raw.githubusercontent.com/headwindsim/branding/main/logos/Livery-Package-Light.svg",
-          "enabled": true,
-          "backgroundImageUrls": [
-            "https://media.discordapp.net/attachments/1146925802064203857/1184538421109194802/Microsoft_Flight_Simulator_Screenshot_2023.10.04_-_09.26.06.91.png?ex=658c565f&is=6579e15f&hm=0a383d06fc7bec98c8b0c4fe853a613dcd0bac40d4b25ec20715cfb51cc2c908&=&format=webp&quality=lossless"
-          ],
-          "shortDescription": "Horizon Simulations Boeing 787-9 Package",
-          "description": "The Horizon Simulations Boeing 787-9 official livery package includes a diverse range of airline designs created by various artists. The package features liveries from major airlines like Air Canada, Air China, Air France, American Airlines, British Airways, and more, with each livery credited to its respective artist. Notable liveries include special editions like Air Canada's \"Fly The Flag,\" Air New Zealand's black color scheme, ANA's \"Star Wars\" theme, and EL AL's “Jerusalem Of Gold.” This collection offers a wide variety of designs, showcasing the global appeal and versatility of the Boeing 787-9 aircraft.",
-          "targetDirectory": "horizonsim-aircraft-787-9-livery-package",
-          "alternativeNames": [],
-          "tracks": [
-            {
-              "name": "Release",
-              "key": "hs789-livery-release",
-              "url": "https://cdn.horizonsimulations.com/addons/hs789-livery-package/release",
-              "description": "Included liveries in the package are as follows. \n\nAir Canada (Fly The Flag) - Credit: Raimbotrax\n\nAir Canada (New Colours) – Credit: Raimbotrax\n\nAir Canada (Old Colours) – Credit: Raimbotrax\n\n\n\nAir China – Credit: Jason\n\nAir Europa – Credit: Max\n\nAir France – Credit: Max\n\nAir New Zealand – Credit: Zaph\n\nAir New Zealand (Black) – Credit: Zaph\n\nAmerican Airlines – Credit: Zaph\n\nANA – Credit: Jason/Zaph\n\nANA “Star Wars” – Credit: Jason\n\nBritish Airways – Credit: Max\n\nChina Eastern – Credit: Jason\n\nChina Southern – Credit: Jason\n\nEL AL “Jerusalem Of Gold” – Credit: Max\n\nEtihad Airways – Credit: Zaph\n\nHainan Airlines – Credit: Jason\n\nJapan Airlines – Credit: Zaph\n\nJuneyao – Credit: Jason\n\nKLM – Credit: Max\n\nLufthansa – Credit: Raimbotrax\n\nLOT – Credit: Max\n\nNorse UK/Norse – Credit: Hakon\n\nSaudia Airways – Credit: Max\n\nShanghai Airlines – Credit: Jason\n\nThai – Credit: Jason\n\nTUI UK – Credit: Hakon\n\nVistara – Credit: Max\n\nVirgin Atlantic – Credit: Max\n\nWestjet – Credit: Zaph\n\nXiamen Air “United Dreams” – Credit: Jason\n\nXiamen Airlines – Credit: Jason",
-              "isExperimental": false,
-              "releaseModel": {
-                "type": "CDN"
-              }
-            }
-          ],
-          "dependencies": [
-            {
-              "addon": "@horizonsim/b789",
-              "optional": false,
-              "modalText": "Will need base package to be working."
-            }
-          ],
-          "incompatibleAddons": [],
-          "myInstallPage": {
-            "links": [
-              {
-                "url": "https://flightsim.to/add-ons/horizon-simulations-boeing-787-9",
-                "title": "Add-Ons"
-              }
-            ],
-            "directories": [
-              {
-                "location": {
-                  "in": "package",
-                  "path": "resources"
-                },
-                "title": "Resources"
-              }
-            ]
-          },
-          "disallowedRunningExternalApps": [
-            "@/msfs"
+            "@/traffic-injector-app"
           ]
         }
       ],
       "buttons": [
         {
-          "text": "Documentation",
+          "text": "Website",
           "action": "openBrowser",
-          "url": "https://docs.flybywiresim.com/"
+          "url": "https://www.fslivetrafficliveries.com/"
         },
         {
           "text": "Discord",
           "action": "openBrowser",
-          "url": "https://discord.gg/Peyby68DTs"
+          "url": "https://discord.gg/suMR56wCrn",
+          "inline": true
+        },
+        {
+          "text": "User Guide",
+          "action": "openBrowser",
+          "url": "https://www.fslivetrafficliveries.com/user-guide/"
+        },
+        {
+          "text": "Support FAQ",
+          "action": "openBrowser",
+          "url": "https://www.fslivetrafficliveries.com/support-faq/"
         }
       ]
     }
